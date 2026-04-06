@@ -69,27 +69,40 @@ nav a:hover {color:#38bdf8;}
     padding:0 10%;
 }
 
+/* FOTO */
 .hero-img img {
     width:380px;
     border-radius:20px;
-    transition:0.4s;
+    transition: all 0.4s ease;
 }
 
-/* HOVER + GLOW */
+/* HOVER FORTE */
 .hero-img img:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
+/* DARK FOTO */
 body.dark .hero-img img {
     border:3px solid #38bdf8;
     box-shadow:0 0 40px rgba(56,189,248,0.5);
 }
 
+/* LIGHT FOTO */
 body.light .hero-img img {
     border:3px solid #1d4ed8;
     box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
+/* HOVER GLOW */
+body.dark .hero-img img:hover {
+    box-shadow:0 0 70px rgba(56,189,248,0.9);
+}
+
+body.light .hero-img img:hover {
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* TEXTO */
 .hero-text {
     max-width:500px;
 }
@@ -143,13 +156,14 @@ body.light .skill-card {
     box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* HOVER PREMIUM */
+/* HOVER PROJETOS */
 .project-card:hover {
     transform:scale(1.05);
     background:#2563eb;
     color:white;
 }
 
+/* HOVER SKILLS */
 .skill-card:hover {
     transform:translateY(-10px);
     border:1px solid #38bdf8;
