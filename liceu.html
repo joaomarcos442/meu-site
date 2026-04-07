@@ -3,38 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <title>Projeto LICEU</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<style>
-* {margin:0;padding:0;box-sizing:border-box;}
-body {font-family:'Poppins',sans-serif;}
-body.dark {background:#020617;color:#e2e8f0;}
-body.light {background:#f8fafc;color:#0f172a;}
 
-nav {
-    position: fixed;
-    width: 100%;
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Poppins',sans-serif;
+}
+
+body.dark{
+    background:#020617;
+    color:#e2e8f0;
+}
+
+body.light{
+    background:#f8fafc;
+    color:#0f172a;
+}
+
+nav{
+    position:fixed;
+    width:100%;
     top:0;
     padding:15px 10%;
     display:flex;
     justify-content:space-between;
     backdrop-filter:blur(10px);
 }
-body.dark nav {background: rgba(2,6,23,0.8);}
-body.light nav {background: rgba(255,255,255,0.8);}
-nav a {margin-left:20px;text-decoration:none;}
-body.dark nav a {color:white;}
-body.light nav a {color:#0f172a;}
-nav a:hover {color:#38bdf8;}
-#themeBtn {margin-left:20px;padding:6px 10px;border:none;border-radius:8px;cursor:pointer;}
 
-.container {max-width:800px;margin:auto;padding:120px 20px;}
-h1 {color:#38bdf8;margin-bottom:20px;}
-p {line-height:1.7;margin-bottom:15px;}
-.tech {background:#1e293b;padding:10px;border-radius:8px;display:inline-block;margin-top:10px;}
-body.light .tech {background:#e2e8f0;color:#0f172a;}
+body.dark nav{background:rgba(2,6,23,0.8);}
+body.light nav{background:rgba(255,255,255,0.8);}
+
+nav a{
+    margin-left:20px;
+    text-decoration:none;
+}
+
+body.dark nav a{color:white;}
+body.light nav a{color:#0f172a;}
+
+nav a:hover{color:#38bdf8;}
+
+#themeBtn{
+    margin-left:20px;
+    padding:6px 10px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    padding:120px 20px;
+}
+
+h1{
+    color:#38bdf8;
+    margin-bottom:20px;
+}
+
+p{
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+.tech{
+    background:#1e293b;
+    padding:10px;
+    border-radius:8px;
+    display:inline-block;
+    margin-top:10px;
+}
+
+body.light .tech{
+    background:#e2e8f0;
+    color:#0f172a;
+}
+
+a{
+    display:inline-block;
+    margin-top:30px;
+    color:#38bdf8;
+    text-decoration:none;
+}
 </style>
 </head>
+
 <body>
+
 <nav>
     <strong>João Marcos</strong>
     <div>
@@ -44,25 +103,49 @@ body.light .tech {background:#e2e8f0;color:#0f172a;}
 </nav>
 
 <div class="container">
-    <h1>Projeto LICEU</h1>
 
-    <p>
-    Desenvolvimento front-end de sistema web acadêmico para gerenciamento de informações.
-    Atuei na criação da interface, organização de conteúdos e responsividade.
-    </p>
+<h1>Projeto COLISEU – LICEU (ArcheoMap)</h1>
 
-    <div class="tech">Tecnologias: HTML, CSS, JavaScript</div>
+<p>
+Projeto acadêmico desenvolvido em equipe com foco na criação de um sistema web institucional,
+voltado à organização e apresentação de informações de forma estruturada e acessível.
+</p>
+
+<p>
+Atuei diretamente no desenvolvimento front-end da aplicação, sendo responsável pela construção da interface,
+estruturação das páginas e definição da organização visual do sistema.
+</p>
+
+<p>
+Durante o desenvolvimento, foram aplicados conceitos de design de interfaces,
+responsividade e usabilidade, com o objetivo de proporcionar uma navegação intuitiva
+e uma experiência agradável ao usuário.
+</p>
+
+<p>
+A participação nesse projeto contribuiu para o desenvolvimento das minhas habilidades em trabalho em equipe,
+comunicação e construção de aplicações web estruturadas.
+</p>
+
+<div class="tech">Tecnologias: HTML, CSS</div>
+
+<a href="index.html">← Voltar</a>
+
 </div>
 
 <script>
 window.onload = function(){
     let savedTheme = localStorage.getItem("theme") || "dark";
     document.body.classList.add(savedTheme);
+
+    let btn = document.getElementById("themeBtn");
+    btn.innerText = savedTheme === "dark" ? "🌙" : "☀️";
 }
 
 function toggleTheme(){
     let body = document.body;
     let btn = document.getElementById("themeBtn");
+
     if(body.classList.contains("dark")){
         body.classList.remove("dark");
         body.classList.add("light");
@@ -76,5 +159,6 @@ function toggleTheme(){
     }
 }
 </script>
+
 </body>
 </html>
