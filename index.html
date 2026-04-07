@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <title>João Marcos</title>
 
+<!-- CORREÇÃO DEFINITIVA DO TEMA (ANTES DE CARREGAR) -->
+<script>
+(function(){
+    let theme = localStorage.getItem("theme") || "dark";
+    document.documentElement.classList.add(theme);
+})();
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
@@ -14,12 +22,12 @@ body {
 }
 
 /* REMOVE ANIMAÇÃO NO LOAD */
-body.no-transition * {
+.no-transition * {
     transition: none !important;
 }
 
 /* DARK */
-body.dark {
+.dark body {
     background: radial-gradient(circle at 20% 30%, #1e3a8a, transparent 40%),
                 radial-gradient(circle at 80% 70%, #9333ea, transparent 40%),
                 #020617;
@@ -27,7 +35,7 @@ body.dark {
 }
 
 /* LIGHT */
-body.light {
+.light body {
     background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
     color:#0f172a;
 }
@@ -44,8 +52,8 @@ nav {
     z-index:1000;
 }
 
-body.dark nav {background: rgba(2,6,23,0.8);}
-body.light nav {background: rgba(255,255,255,0.8);}
+.dark nav {background: rgba(2,6,23,0.8);}
+.light nav {background: rgba(255,255,255,0.8);}
 
 nav a {
     margin-left: 20px;
@@ -53,8 +61,8 @@ nav a {
     transition:0.3s;
 }
 
-body.dark nav a {color:white;}
-body.light nav a {color:#0f172a;}
+.dark nav a {color:white;}
+.light nav a {color:#0f172a;}
 
 nav a:hover {color:#38bdf8;}
 
@@ -85,12 +93,12 @@ nav a:hover {color:#38bdf8;}
     transform: scale(1.08);
 }
 
-body.dark .hero-img img {
+.dark .hero-img img {
     border:3px solid #38bdf8;
     box-shadow:0 0 50px rgba(56,189,248,0.6);
 }
 
-body.light .hero-img img {
+.light .hero-img img {
     border:3px solid #1d4ed8;
     box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
@@ -119,8 +127,8 @@ h2 {
     margin-bottom:30px;
 }
 
-body.dark h2 {color:#38bdf8;}
-body.light h2 {color:#1d4ed8;}
+.dark h2 {color:#38bdf8;}
+.light h2 {color:#1d4ed8;}
 
 /* CARDS */
 .projects, .skills {
@@ -136,14 +144,14 @@ body.light h2 {color:#1d4ed8;}
 }
 
 /* DARK */
-body.dark .project-card,
-body.dark .skill-card {
+.dark .project-card,
+.dark .skill-card {
     background:#1e293b;
 }
 
 /* LIGHT */
-body.light .project-card,
-body.light .skill-card {
+.light .project-card,
+.light .skill-card {
     background:white;
     box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
@@ -151,13 +159,12 @@ body.light .skill-card {
 /* PROJETOS */
 .project-card {
     cursor:pointer;
-    position: relative;
 }
 
 /* HOVER CORRIGIDO DEFINITIVO */
 .project-card:hover {
     transform:translateY(-8px) scale(1.02);
-    background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
     box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
 }
 
@@ -320,33 +327,27 @@ p {
 
 <script>
 window.onload = function(){
-    let body = document.body;
-
-    body.classList.add("no-transition");
-
     let savedTheme = localStorage.getItem("theme") || "dark";
-    body.classList.add(savedTheme);
+
+    document.documentElement.classList.remove("dark","light");
+    document.documentElement.classList.add(savedTheme);
 
     let btn = document.getElementById("themeBtn");
     btn.innerText = savedTheme === "dark" ? "🌙" : "☀️";
-
-    setTimeout(() => {
-        body.classList.remove("no-transition");
-    }, 50);
 }
 
 function toggleTheme(){
-    let body = document.body;
+    let html = document.documentElement;
     let btn = document.getElementById("themeBtn");
 
-    if(body.classList.contains("dark")){
-        body.classList.remove("dark");
-        body.classList.add("light");
+    if(html.classList.contains("dark")){
+        html.classList.remove("dark");
+        html.classList.add("light");
         localStorage.setItem("theme","light");
         btn.innerText="☀️";
     } else {
-        body.classList.remove("light");
-        body.classList.add("dark");
+        html.classList.remove("light");
+        html.classList.add("dark");
         localStorage.setItem("theme","dark");
         btn.innerText="🌙";
     }
