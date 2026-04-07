@@ -28,7 +28,7 @@ body.dark {
 
 /* LIGHT */
 body.light {
-    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
     color:#0f172a;
 }
 
@@ -148,18 +148,26 @@ body.light .skill-card {
     box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* HOVER PROJETOS */
+/* PROJETOS */
 .project-card {
     cursor:pointer;
 }
 
+/* HOVER CORRIGIDO */
 .project-card:hover {
     transform:translateY(-8px) scale(1.02);
-    background:#2563eb;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
     color:white;
 }
 
-/* HOVER SKILLS */
+/* GARANTE TEXTO VISÍVEL */
+.project-card:hover h3,
+.project-card:hover p,
+.project-card:hover strong {
+    color:white;
+}
+
+/* HABILIDADES */
 .skill-card:hover {
     transform:translateY(-8px);
     border:1px solid #38bdf8;
@@ -221,8 +229,8 @@ p {
     <h2>Sobre Mim</h2>
 
     <p>
-    Sou estudante de Ciência da Computação na Universidade Católica de Pernambuco (UNICAP), atualmente no 5º período.
-    Ao longo da graduação, desenvolvi uma base sólida em programação, lógica computacional e desenvolvimento de sistemas.
+    Sou estudante de Ciência da Computação na UNICAP, atualmente no 5º período,
+    com sólida base em programação, lógica computacional e desenvolvimento de sistemas.
     </p>
 
     <p>
