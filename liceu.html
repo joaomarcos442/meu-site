@@ -3,79 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <title>Projeto LICEU</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
-body {
-    font-family:'Poppins',sans-serif;
-    background:#0f172a;
-    color:#e2e8f0;
-    padding:50px;
-}
+* {margin:0;padding:0;box-sizing:border-box;}
+body {font-family:'Poppins',sans-serif;}
+body.dark {background:#020617;color:#e2e8f0;}
+body.light {background:#f8fafc;color:#0f172a;}
 
-.container {
-    max-width:800px;
-    margin:auto;
+nav {
+    position: fixed;
+    width: 100%;
+    top:0;
+    padding:15px 10%;
+    display:flex;
+    justify-content:space-between;
+    backdrop-filter:blur(10px);
 }
+body.dark nav {background: rgba(2,6,23,0.8);}
+body.light nav {background: rgba(255,255,255,0.8);}
+nav a {margin-left:20px;text-decoration:none;}
+body.dark nav a {color:white;}
+body.light nav a {color:#0f172a;}
+nav a:hover {color:#38bdf8;}
+#themeBtn {margin-left:20px;padding:6px 10px;border:none;border-radius:8px;cursor:pointer;}
 
-h1 {
-    color:#38bdf8;
-    margin-bottom:20px;
-}
-
-p {
-    line-height:1.7;
-    margin-bottom:15px;
-}
-
-.tech {
-    background:#1e293b;
-    padding:10px;
-    border-radius:8px;
-    display:inline-block;
-    margin-top:10px;
-}
-
-a {
-    display:inline-block;
-    margin-top:30px;
-    color:#38bdf8;
-    text-decoration:none;
-}
+.container {max-width:800px;margin:auto;padding:120px 20px;}
+h1 {color:#38bdf8;margin-bottom:20px;}
+p {line-height:1.7;margin-bottom:15px;}
+.tech {background:#1e293b;padding:10px;border-radius:8px;display:inline-block;margin-top:10px;}
+body.light .tech {background:#e2e8f0;color:#0f172a;}
 </style>
 </head>
-
 <body>
+<nav>
+    <strong>João Marcos</strong>
+    <div>
+        <a href="index.html">← Voltar</a>
+        <button onclick="toggleTheme()" id="themeBtn">🌙</button>
+    </div>
+</nav>
 
 <div class="container">
+    <h1>Projeto LICEU</h1>
 
-<h1>Projeto COLISEU – LICEU (ArcheoMap)</h1>
+    <p>
+    Desenvolvimento front-end de sistema web acadêmico para gerenciamento de informações.
+    Atuei na criação da interface, organização de conteúdos e responsividade.
+    </p>
 
-<p>
-Projeto acadêmico desenvolvido em equipe com foco na criação de um sistema web institucional.
-</p>
-
-<p>
-Atuei no desenvolvimento front-end, sendo responsável pela construção da interface e organização visual da aplicação,
-buscando oferecer uma navegação intuitiva e uma boa experiência ao usuário.
-</p>
-
-<p>
-Foram aplicados conceitos de design, estruturação de páginas e usabilidade,
-garantindo uma interface clara e funcional.
-</p>
-
-<p>
-O projeto contribuiu para o desenvolvimento de habilidades em trabalho em equipe
-e construção de interfaces web.
-</p>
-
-<div class="tech">Tecnologias: HTML, CSS</div>
-
-<a href="index.html">← Voltar</a>
-
+    <div class="tech">Tecnologias: HTML, CSS, JavaScript</div>
 </div>
 
+<script>
+window.onload = function(){
+    let savedTheme = localStorage.getItem("theme") || "dark";
+    document.body.classList.add(savedTheme);
+}
+
+function toggleTheme(){
+    let body = document.body;
+    let btn = document.getElementById("themeBtn");
+    if(body.classList.contains("dark")){
+        body.classList.remove("dark");
+        body.classList.add("light");
+        localStorage.setItem("theme","light");
+        btn.innerText="☀️";
+    } else {
+        body.classList.remove("light");
+        body.classList.add("dark");
+        localStorage.setItem("theme","dark");
+        btn.innerText="🌙";
+    }
+}
+</script>
 </body>
 </html>
