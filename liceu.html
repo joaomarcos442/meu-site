@@ -9,19 +9,10 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
-body{
-    font-family:'Poppins',sans-serif;
-}
+body{font-family:'Poppins',sans-serif;}
 
-body.dark{
-    background:#020617;
-    color:#e2e8f0;
-}
-
-body.light{
-    background:#f8fafc;
-    color:#0f172a;
-}
+body.dark{background:#020617;color:#e2e8f0;}
+body.light{background:#f8fafc;color:#0f172a;}
 
 nav{
     position:fixed;
@@ -36,14 +27,9 @@ nav{
 body.dark nav{background:rgba(2,6,23,0.8);}
 body.light nav{background:rgba(255,255,255,0.8);}
 
-nav a{
-    margin-left:20px;
-    text-decoration:none;
-}
-
+nav a{margin-left:20px;text-decoration:none;}
 body.dark nav a{color:white;}
 body.light nav a{color:#0f172a;}
-
 nav a:hover{color:#38bdf8;}
 
 #themeBtn{
@@ -60,15 +46,9 @@ nav a:hover{color:#38bdf8;}
     padding:120px 20px;
 }
 
-h1{
-    color:#38bdf8;
-    margin-bottom:20px;
-}
+h1{color:#38bdf8;margin-bottom:20px;}
 
-p{
-    line-height:1.7;
-    margin-bottom:15px;
-}
+p{line-height:1.7;margin-bottom:15px;}
 
 .tech{
     background:#1e293b;
@@ -83,11 +63,22 @@ body.light .tech{
     color:#0f172a;
 }
 
-a{
+/* BOTÕES */
+a.button{
     display:inline-block;
     margin-top:30px;
+    margin-right:10px;
     color:#38bdf8;
     text-decoration:none;
+    padding:10px 18px;
+    border:1px solid #38bdf8;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+a.button:hover{
+    background:#38bdf8;
+    color:white;
 }
 </style>
 </head>
@@ -108,28 +99,29 @@ a{
 
 <p>
 Projeto acadêmico desenvolvido em equipe com foco na criação de um sistema web institucional,
-voltado à organização e apresentação de informações de forma estruturada e acessível.
+voltado à organização e apresentação de informações.
 </p>
 
 <p>
-Atuei diretamente no desenvolvimento front-end da aplicação, sendo responsável pela construção da interface,
-estruturação das páginas e definição da organização visual do sistema.
+Atuei no desenvolvimento front-end, sendo responsável pela construção da interface,
+estruturação das páginas e organização visual da aplicação.
 </p>
 
 <p>
-Durante o desenvolvimento, foram aplicados conceitos de design de interfaces,
-responsividade e usabilidade, com o objetivo de proporcionar uma navegação intuitiva
-e uma experiência agradável ao usuário.
+Foram aplicados conceitos de design, responsividade e usabilidade,
+buscando proporcionar uma navegação intuitiva e eficiente.
 </p>
 
 <p>
-A participação nesse projeto contribuiu para o desenvolvimento das minhas habilidades em trabalho em equipe,
-comunicação e construção de aplicações web estruturadas.
+O projeto contribuiu para o desenvolvimento de habilidades em trabalho em equipe
+e construção de aplicações web.
 </p>
 
 <div class="tech">Tecnologias: HTML, CSS</div>
 
-<a href="index.html">← Voltar</a>
+<div>
+    <a class="button" href="index.html">← Voltar</a>
+</div>
 
 </div>
 
