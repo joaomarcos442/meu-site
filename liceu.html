@@ -5,9 +5,16 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Projeto LICEU</title>
+
+<script>
+(function(){
+let theme = localStorage.getItem("theme") || "dark";
+document.documentElement.classList.add(theme);
+})();
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -20,49 +27,47 @@
 <strong>João Marcos</strong>
 
 <div>
-
-<a href="index.html">Início</a> <a href="index.html#projetos">Projetos</a>
-
+<a href="index.html">← Voltar</a>
+<button onclick="toggleTheme()" id="themeBtn">🌙</button>
 </div>
 
 </nav>
 
-<div class="section">
+<div class="container">
 
-<h2>Projeto LICEU</h2>
+<h1>Projeto COLISEU – LICEU (ArcheoMap)</h1>
 
 <p>
-O Projeto LICEU foi desenvolvido no contexto acadêmico com o objetivo de aplicar
-na prática conceitos de desenvolvimento de interfaces web.
+Projeto acadêmico desenvolvido em equipe com foco na criação de um sistema web institucional,
+voltado à organização e apresentação de informações.
 </p>
 
 <p>
-Durante o projeto foram trabalhados princípios de estruturação de páginas,
-organização de conteúdo e estilização utilizando tecnologias de front-end.
+Atuei no desenvolvimento front-end, sendo responsável pela construção da interface,
+estruturação das páginas e organização visual da aplicação.
 </p>
 
 <p>
-A proposta foi construir uma interface clara e funcional, permitindo apresentar
-informações de forma organizada e visualmente agradável.
+Foram aplicados conceitos de design, responsividade e usabilidade,
+buscando proporcionar uma navegação intuitiva.
 </p>
 
 <p>
-Esse projeto contribuiu para o desenvolvimento de habilidades relacionadas à
-criação de layouts responsivos e boas práticas de desenvolvimento web.
+O projeto contribuiu para o desenvolvimento de habilidades em trabalho em equipe
+e construção de aplicações web.
 </p>
 
-<br>
+<div class="tech">
+Tecnologias: HTML, CSS
+</div>
 
-<h3>Tecnologias utilizadas</h3>
-
-<ul>
-
-<li>HTML</li>
-<li>CSS</li>
-
-</ul>
+<div>
+<a class="button" href="index.html">← Voltar</a>
+</div>
 
 </div>
+
+<script src="js/script.js"></script>
 
 </body>
 </html>
