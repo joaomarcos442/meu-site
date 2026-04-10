@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="pt-br">
+
 <head>
 
 <meta charset="UTF-8">
@@ -31,7 +32,9 @@ document.documentElement.classList.add(theme);
 <a href="#habilidades">Habilidades</a>
 <a href="#objetivo">Objetivo</a>
 <a href="#contato">Contato</a>
+
 <button onclick="toggleTheme()" id="themeBtn">🌙</button>
+
 </div>
 
 </nav>
@@ -163,15 +166,17 @@ Entre em contato comigo ou acesse minhas redes profissionais.
 
 </div>
 
-<form class="contact-form">
+<form class="contact-form" id="contactForm">
 
-<input type="text" placeholder="Seu nome" required>
+<input type="text" id="nome" placeholder="Seu nome">
 
-<input type="email" placeholder="Seu email" required>
+<input type="email" id="email" placeholder="Seu email">
 
-<textarea placeholder="Digite sua mensagem..." required></textarea>
+<textarea id="mensagem" placeholder="Digite sua mensagem..."></textarea>
 
 <button type="submit">Enviar mensagem</button>
+
+<p id="statusMensagem"></p>
 
 </form>
 
