@@ -5,9 +5,16 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raspberry Pi</title>
 
-<title>Projeto Raspberry Pi</title>
+<script>
+(function(){
+let theme = localStorage.getItem("theme") || "dark";
+document.documentElement.classList.add(theme);
+})();
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -20,51 +27,48 @@
 <strong>João Marcos</strong>
 
 <div>
-
-<a href="index.html">Início</a> <a href="index.html#projetos">Projetos</a>
-
+<a href="index.html">← Voltar</a>
+<button onclick="toggleTheme()" id="themeBtn">🌙</button>
 </div>
 
 </nav>
 
-<div class="section">
+<div class="container">
 
-<h2>Projeto Raspberry Pi</h2>
+<h1>Integração de Hardware com Raspberry Pi</h1>
 
 <p>
-Este projeto foi desenvolvido com o objetivo de explorar conceitos de computação
-física e integração entre software e hardware utilizando a plataforma Raspberry Pi.
+Projeto acadêmico voltado ao desenvolvimento de um protótipo funcional de automação,
+utilizando Raspberry Pi e programação em Python.
 </p>
 
 <p>
-Durante o desenvolvimento foram aplicados conhecimentos de programação em Python
-para controle de dispositivos eletrônicos conectados ao microcomputador.
+O projeto envolveu a integração entre hardware e software,
+permitindo testes práticos de aplicações em Internet das Coisas (IoT),
+explorando comunicação entre dispositivos.
 </p>
 
 <p>
-A proposta do projeto foi demonstrar como sistemas embarcados podem ser utilizados
-para automação e controle de dispositivos, permitindo a criação de soluções
-tecnológicas aplicáveis em diferentes contextos.
+Durante o desenvolvimento, foram aplicados conceitos de sistemas embarcados,
+automação e controle de componentes físicos.
 </p>
 
 <p>
-Esse tipo de aplicação é muito utilizado em áreas como automação residencial,
-Internet das Coisas (IoT) e sistemas inteligentes.
+Essa experiência contribuiu para o desenvolvimento das minhas habilidades
+em integração entre software e hardware.
 </p>
 
-<br>
+<div class="tech">
+Tecnologias: Raspberry Pi, Python
+</div>
 
-<h3>Tecnologias utilizadas</h3>
-
-<ul>
-
-<li>Python</li>
-<li>Raspberry Pi</li>
-<li>Integração Hardware / Software</li>
-
-</ul>
+<div>
+<a class="button" href="index.html">← Voltar</a>
+</div>
 
 </div>
+
+<script src="js/script.js"></script>
 
 </body>
 </html>
