@@ -1,18 +1,30 @@
-function validarEmail(email) {
-    if (!email) return false;
-    return email.includes("@") && email.includes(".");
+function ehTextoValido(valor) {
+    return typeof valor === 'string' && valor.trim().length > 0;
 }
 
-function validarCampoVazio(campo) {
-    if (!campo) {
+function validarEmail(email) {
+    if (!ehTextoValido(email)) {
         return false;
     }
 
-    return campo.trim() !== '';
+    const emailFormatado = email.trim();
+
+    return emailFormatado.includes('@') && emailFormatado.includes('.');
+}
+
+function validarCampoVazio(campo) {
+    return ehTextoValido(campo);
 }
 
 function limitarTexto(texto, limite) {
-    if (!texto) return "";
+    if (typeof texto !== 'string') {
+        return '';
+    }
+
+    if (typeof limite !== 'number' || limite < 0) {
+        return texto;
+    }
+
     return texto.length > limite ? texto.substring(0, limite) : texto;
 }
 
